@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MILLIY-BUSINESS — Поставки промышленных товаров</title>
+<meta name="description" content="MILLIY-BUSINESS — надёжный поставщик автозапчастей для спецтехники, ЗРА, трубной продукции, электрики и КИПиА в Узбекистане">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #1B3FA0;
+    --blue-dark: #0D2260;
+    --blue-light: #2954C8;
+    --blue-pale: #EEF2FF;
+    --white: #FFFFFF;
+    --gray-50: #F8F9FC;
+    --gray-100: #EEF0F5;
+    --gray-300: #C2C8D8;
+    --gray-500: #6B7490;
+    --gray-700: #3A4060;
+    --gray-900: #111827;
+    --gold: #C9993B;
+    --font: 'Inter', sans-serif;
+    --font-head: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    color: var(--gray-900);
+    background: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--blue-dark);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: box-shadow 0.3s;
+  }
+  header.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.3); }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    height: 44px;
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .logo-icon img {
+    height: 44px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+  .footer-brand .logo-icon img { filter: brightness(0) invert(1); }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .logo-name {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+  .logo-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; align-items: center; gap: 8px; }
+
+  nav a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+
+  .nav-cta {
+    background: var(--blue-light) !important;
+    color: var(--white) !important;
+    padding: 8px 18px !important;
+    margin-left: 8px;
+  }
+  .nav-cta:hover { background: #3461d8 !important; }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 3px;
+  }
+  .lang-btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    transition: all 0.2s;
+    border: none;
+    background: transparent;
+    letter-spacing: 0.5px;
+  }
+  .lang-btn.active { background: var(--white); color: var(--blue-dark); }
+  .lang-btn:hover:not(.active) { color: var(--white); }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    background: transparent;
+  }
+  .burger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #2E5BE0 100%);
+    padding: 160px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 24px;
+  }
+  .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; flex-shrink: 0; }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 span { color: #93B4FF; }
+
+  .hero-desc {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--blue-dark);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #EEF2FF; transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 400px;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .hero-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+  .hero-card-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+  }
+  .hero-card-icon svg { width: 36px; height: 36px; }
+  .hero-card-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--gray-50); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--blue-pale);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .feature-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 2px; }
+  .feature-desc { font-size: 12px; color: var(--gray-500); }
+
+  .about-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .metric-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--blue);
+  }
+  .metric-num {
+    font-family: var(--font-head);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+  }
+  .metric-unit { font-size: 20px; }
+  .metric-label {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 6px;
+  }
+  .metric-card.full { grid-column: span 2; background: var(--blue); }
+  .metric-card.full::before { background: rgba(255,255,255,0.3); }
+  .metric-card.full .metric-num { color: var(--white); }
+  .metric-card.full .metric-label { color: rgba(255,255,255,0.7); }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--white); }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1.5px solid var(--gray-100);
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .product-card:hover { border-color: var(--blue); box-shadow: 0 8px 32px rgba(27,63,160,0.12); transform: translateY(-3px); }
+  .product-card:hover::after { transform: scaleX(1); }
+
+  .product-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--blue-pale);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .product-title { font-size: 17px; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+  .product-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+  .product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-pale);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── WHY US ── */
+  #why { background: var(--blue-dark); }
+  #why .section-label { color: #93B4FF; }
+  #why .section-title { color: var(--white); }
+  #why .section-desc { color: rgba(255,255,255,0.65); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 28px 22px;
+    transition: all 0.2s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+  .why-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .why-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .why-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--gray-50); }
+
+  .clients-wrap {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .client-block {
+    background: var(--white);
+    border: 1.5px solid var(--gray-100);
+    border-radius: 14px;
+    padding: 32px 28px;
+  }
+  .client-block-icon { font-size: 36px; margin-bottom: 16px; }
+  .client-block-title { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+  .client-block-desc { font-size: 15px; color: var(--gray-500); line-height: 1.65; }
+  .client-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .client-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+  .client-list-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+    align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    border: 1px solid var(--gray-100);
+  }
+  .contact-item-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .contact-item-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 4px; }
+  .contact-item-value { font-size: 16px; font-weight: 600; color: var(--gray-900); }
+  .contact-item-value a { color: var(--blue); text-decoration: none; }
+  .contact-item-value a:hover { text-decoration: underline; }
+
+  .contact-form {
+    background: var(--gray-50);
+    border: 1.5px solid var(--gray-100);
+    border-radius: 16px;
+    padding: 36px;
+  }
+  .form-title { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+  .form-subtitle { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-group label { font-size: 13px; font-weight: 600; color: var(--gray-700); }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--white);
+    border: 1.5px solid var(--gray-300);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: var(--font);
+    color: var(--gray-900);
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,63,160,0.1); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font);
+    margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+  /* ── MAP ── */
+  .map-wrap {
+    margin-top: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--gray-100);
+    height: 360px;
+  }
+  .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--blue-dark);
+    padding: 48px 24px 28px;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .logo-name { font-size: 18px; }
+  .footer-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-top: 12px;
+    max-width: 260px;
+  }
+
+  .footer-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { background: rgba(255,255,255,0.16); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #16A34A;
+    color: var(--white);
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    z-index: 9999;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes floatA {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-6px); }
+  }
+  @keyframes floatB {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-9px); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes countPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .anim-badge   { animation: fadeIn  0.6s ease both; animation-delay: 0.1s; }
+  .anim-title   { animation: fadeUp  0.7s ease both; animation-delay: 0.3s; }
+  .anim-desc    { animation: fadeUp  0.7s ease both; animation-delay: 0.5s; }
+  .anim-actions { animation: fadeUp  0.7s ease both; animation-delay: 0.65s; }
+  .anim-stats   { animation: fadeIn  0.8s ease both; animation-delay: 0.85s; }
+  .anim-card-1  { animation: scaleIn 0.5s ease both; animation-delay: 0.4s; }
+  .anim-card-2  { animation: scaleIn 0.5s ease both; animation-delay: 0.55s; }
+  .anim-card-3  { animation: scaleIn 0.5s ease both; animation-delay: 0.7s; }
+  .anim-card-4  { animation: scaleIn 0.5s ease both; animation-delay: 0.85s; }
+  .anim-card-5  { animation: scaleIn 0.5s ease both; animation-delay: 1.0s; }
+  .anim-card-6  { animation: scaleIn 0.5s ease both; animation-delay: 1.15s; }
+
+  .float-a { animation: floatA 4s ease-in-out infinite; }
+  .float-b { animation: floatB 5s ease-in-out 0.8s infinite; }
+  .float-c { animation: floatA 6s ease-in-out 1.6s infinite; }
+  .float-d { animation: floatB 4.5s ease-in-out 0.4s infinite; }
+  .float-e { animation: floatA 5.5s ease-in-out 1.2s infinite; }
+  .float-f { animation: floatB 4s ease-in-out 2s infinite; }
+
+  .stat-num.counted { animation: countPulse 0.4s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; }
+  }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--blue-dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 24px 24px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 8px;
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-nav a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .burger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .clients-wrap { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .about-features { grid-template-columns: 1fr; }
+    .about-metrics { grid-template-columns: 1fr; }
+    .metric-card.full { grid-column: span 1; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr; gap: 12px; }
+    section { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg height="40" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="MILLIY-BUSINESS логотип">
+          <text x="0" y="36" font-family="Georgia,serif" font-size="38" font-weight="700" fill="white" letter-spacing="-2">MB</text>
+          <text x="1" y="52" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.65)" letter-spacing="3">MILLIY-BUSINESS</text>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">MILLIY-BUSINESS</span>
+        <span class="logo-sub" id="logo-sub-text">Промышленные поставки</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#about" data-i18n="nav_about">О компании</a>
+      <a href="#products" data-i18n="nav_products">Товары</a>
+      <a href="#why" data-i18n="nav_why">Преимущества</a>
+      <a href="#clients" data-i18n="nav_clients">Клиенты</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav_contact">Связаться</a>
+      <div class="lang-switch">
+        <button class="lang-btn" onclick="setLang('uz')">UZ</button>
+        <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </nav>
+    <button class="burger" onclick="toggleMobileNav()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobileNav()" data-i18n="nav_about">О компании</a>
+  <a href="#products" onclick="closeMobileNav()" data-i18n="nav_products">Товары</a>
+  <a href="#why" onclick="closeMobileNav()" data-i18n="nav_why">Преимущества</a>
+  <a href="#clients" onclick="closeMobileNav()" data-i18n="nav_clients">Клиенты</a>
+  <a href="#contact" onclick="closeMobileNav()" data-i18n="nav_contact">Связаться</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge anim-badge" data-i18n="hero_badge">Надёжный поставщик с 2019 года</div>
+      <h1 class="anim-title" data-i18n="hero_title">Промышленные поставки<br><span>для вашего бизнеса</span></h1>
+      <p class="hero-desc anim-desc" data-i18n="hero_desc">Автозапчасти для спецтехники, ЗРА, трубная продукция, электрика и КИПиА. Работаем с B2B-клиентами и государственными структурами по всему Узбекистану.</p>
+      <div class="hero-actions anim-actions">
+        <a href="#products" class="btn-primary" data-i18n="hero_btn1">🗂 Каталог товаров</a>
+        <a href="#contact" class="btn-outline" data-i18n="hero_btn2">Запросить цену</a>
+      </div>
+      <div class="hero-stats anim-stats">
+        <div class="stat-item">
+          <div class="stat-num">5<span class="stat-unit">+</span></div>
+          <div class="stat-label" data-i18n="stat1">лет на рынке</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label" data-i18n="stat2">категорий товаров</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">B2B</div>
+          <div class="stat-label" data-i18n="stat3">& Гостендеры</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-grid">
+        <div class="hero-card anim-card-1 float-a">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="18" r="6" stroke="white" stroke-width="2"/>
+              <path d="M18 2v4M18 30v4M2 18h4M30 18h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6.34 6.34l2.83 2.83M26.83 26.83l2.83 2.83M6.34 29.66l2.83-2.83M26.83 9.17l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="18" cy="18" r="3" fill="white"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc1">Автозапчасти для спецтехники</div>
+        </div>
+        <div class="hero-card anim-card-2 float-b">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="14" width="8" height="8" rx="1" stroke="white" stroke-width="2"/>
+              <rect x="26" y="14" width="8" height="8" rx="1" stroke="white" stroke-width="2"/>
+              <path d="M10 18h4M22 18h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="18" cy="18" r="4" stroke="white" stroke-width="2"/>
+              <path d="M18 14v-4M18 26v-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc2">ЗРА</div>
+        </div>
+        <div class="hero-card anim-card-3 float-c">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 18h8v-4h12v4h8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 22h8v-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 18v4h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="18" cy="14" r="3" stroke="white" stroke-width="2"/>
+              <path d="M12 8l6 6M24 8l-6 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc3">Фасонные детали</div>
+        </div>
+        <div class="hero-card anim-card-4 float-d">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 4L8 20h9l-1 12 12-18h-9L18 4z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc4">Электрика</div>
+        </div>
+        <div class="hero-card anim-card-5 float-e">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12h4v12H4M28 12h4v12h-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="8" y="15" width="20" height="6" rx="3" stroke="white" stroke-width="2"/>
+              <path d="M14 12V8M22 12V8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 24v4M22 24v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc5">Трубная продукция</div>
+        </div>
+        <div class="hero-card anim-card-6 float-f">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6a12 12 0 1 1-8.49 3.51" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 18l-6-8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="18" cy="18" r="2" fill="white"/>
+              <path d="M18 10v2M26 18h-2M22.5 11.5l-1.4 1.4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-card-title" data-i18n="hc6">КИПиА</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="about_label">О компании</span>
+    <h2 class="section-title" data-i18n="about_title">MILLIY-BUSINESS — ваш надёжный партнёр</h2>
+    <p class="section-desc" data-i18n="about_desc">Основана в 2019 году в Ташкенте. Специализируемся на поставках промышленных товаров для предприятий, строительных организаций и государственных структур Узбекистана.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-i18n="about_p1">Компания <strong>MILLIY-BUSINESS</strong> — профессиональный поставщик широкого ассортимента промышленных и технических товаров. Мы работаем напрямую с производителями и официальными дистрибьюторами, что позволяет предлагать конкурентоспособные цены при гарантированном качестве.</p>
+        <p data-i18n="about_p2">Наши клиенты — промышленные предприятия, строительные компании, нефтегазовый сектор и государственные организации. Мы успешно участвуем в тендерах и государственных закупках, обеспечивая своевременную поставку и полный пакет документов.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l6-4v4l6-4v4l4-3v13"/><path d="M9 20v-5h6v5"/></svg></div>
+            <div>
+              <div class="feature-title" data-i18n="feat1_title">Прямые поставки</div>
+              <div class="feature-desc" data-i18n="feat1_desc">От производителей и дистрибьюторов</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
+            <div>
+              <div class="feature-title" data-i18n="feat2_title">Документооборот</div>
+              <div class="feature-desc" data-i18n="feat2_desc">Полный пакет документов</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div>
+              <div class="feature-title" data-i18n="feat3_title">Оперативность</div>
+              <div class="feature-desc" data-i18n="feat3_desc">Быстрое выполнение заявок</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div>
+              <div class="feature-title" data-i18n="feat4_title">Тендеры</div>
+              <div class="feature-desc" data-i18n="feat4_desc">Участие в госзакупках</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-metrics">
+        <div class="metric-card">
+          <div class="metric-num">2019</div>
+          <div class="metric-label" data-i18n="m1">Год основания</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">5<span class="metric-unit">+</span></div>
+          <div class="metric-label" data-i18n="m2">Лет опыта</div>
+        </div>
+        <div class="metric-card full">
+          <div class="metric-num">Ташкент</div>
+          <div class="metric-label" data-i18n="m3">Узбекистан — головной офис</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="prod_label">Товары и услуги</span>
+    <h2 class="section-title" data-i18n="prod_title">Что мы поставляем</h2>
+    <p class="section-desc" data-i18n="prod_desc">Широкий ассортимент промышленных товаров для любых задач — от спецтехники до автоматизации производства.</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="6" stroke="#1B3FA0" stroke-width="2"/>
+            <path d="M18 2v4M18 30v4M2 18h4M30 18h4" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6.34 6.34l2.83 2.83M26.83 26.83l2.83 2.83M6.34 29.66l2.83-2.83M26.83 9.17l2.83-2.83" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="3" fill="#1B3FA0"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p1_title">Автозапчасти для спецтехники</div>
+        <div class="product-desc" data-i18n="p1_desc">Запасные части и комплектующие для экскаваторов, бульдозеров, грузовой и строительной спецтехники. Оригинальные и аналоговые позиции.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p1t1">Экскаваторы</span>
+          <span class="tag" data-i18n="p1t2">Бульдозеры</span>
+          <span class="tag" data-i18n="p1t3">Грузовая техника</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="14" width="8" height="8" rx="1" stroke="#1B3FA0" stroke-width="2"/>
+            <rect x="26" y="14" width="8" height="8" rx="1" stroke="#1B3FA0" stroke-width="2"/>
+            <path d="M10 18h4M22 18h4" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="4" stroke="#1B3FA0" stroke-width="2"/>
+            <path d="M18 14v-4M18 26v-4" stroke="#1B3FA0" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p2_title">ЗРА — Запорно-регулирующая арматура</div>
+        <div class="product-desc" data-i18n="p2_desc">Задвижки, краны, клапаны, заслонки и вся линейка запорно-регулирующей арматуры для промышленных трубопроводов.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p2t1">Задвижки</span>
+          <span class="tag" data-i18n="p2t2">Клапаны</span>
+          <span class="tag" data-i18n="p2t3">Краны</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 22h6v-8h16v8h6" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="10" y="14" width="16" height="8" rx="2" stroke="#1B3FA0" stroke-width="2"/>
+            <path d="M14 14v-5M22 14v-5" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 9h14" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p3_title">Фасонные детали</div>
+        <div class="product-desc" data-i18n="p3_desc">Отводы, тройники, переходы, фланцы и другие фасонные детали трубопроводов. Широкий диапазон диаметров и материалов.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p3t1">Отводы</span>
+          <span class="tag" data-i18n="p3t2">Тройники</span>
+          <span class="tag" data-i18n="p3t3">Переходы</span>
+          <span class="tag" data-i18n="p3t4">Фланцы</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 13h28M4 23h28" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 13v10M32 13v10" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 13V8M26 13V8M10 28v-5M26 28v-5" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p4_title">Трубная продукция</div>
+        <div class="product-desc" data-i18n="p4_desc">Стальные, нержавеющие, полиэтиленовые трубы различных диаметров. Поставки для строительства, ЖКХ и промышленных объектов.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p4t1">Стальные трубы</span>
+          <span class="tag" data-i18n="p4t2">Нержавейка</span>
+          <span class="tag" data-i18n="p4t3">Полиэтилен</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L8 20h9l-1 12 12-18h-9L18 4z" stroke="#1B3FA0" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p5_title">Электрика</div>
+        <div class="product-desc" data-i18n="p5_desc">Кабельно-проводниковая продукция, электрощитовое оборудование, автоматические выключатели, пускатели и вся промышленная электрика.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p5t1">Кабель</span>
+          <span class="tag" data-i18n="p5t2">Автоматы</span>
+          <span class="tag" data-i18n="p5t3">Щитовое оборудование</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6a12 12 0 1 1-8.49 3.51" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 18l-7-9" stroke="#1B3FA0" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="2" fill="#1B3FA0"/>
+            <path d="M18 10v2M26 18h-2M22.5 11.5l-1.4 1.4" stroke="#1B3FA0" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-title" data-i18n="p6_title">КИПиА</div>
+        <div class="product-desc" data-i18n="p6_desc">Контрольно-измерительные приборы и автоматика: датчики давления, температуры, расходомеры, манометры и системы управления.</div>
+        <div class="product-tags">
+          <span class="tag" data-i18n="p6t1">Датчики</span>
+          <span class="tag" data-i18n="p6t2">Манометры</span>
+          <span class="tag" data-i18n="p6t3">Расходомеры</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="why_label">Почему мы</span>
+    <h2 class="section-title" data-i18n="why_title">Наши преимущества</h2>
+    <p class="section-desc" data-i18n="why_desc">Мы строим долгосрочные партнёрские отношения, основанные на качестве, надёжности и профессионализме.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="why-title" data-i18n="w1_title">Качество</div>
+        <div class="why-desc" data-i18n="w1_desc">Работаем только с проверенными производителями. Вся продукция сопровождается необходимой документацией и сертификатами.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="why-title" data-i18n="w2_title">Сроки</div>
+        <div class="why-desc" data-i18n="w2_desc">Соблюдаем договорённые сроки поставки. Оперативная обработка заявок и логистика по Узбекистану.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="why-title" data-i18n="w3_title">Цены</div>
+        <div class="why-desc" data-i18n="w3_desc">Конкурентоспособные цены за счёт прямой работы с поставщиками и оптимизированной логистики.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><path d="M9 13h6M9 17h4"/></svg></div>
+        <div class="why-title" data-i18n="w4_title">Тендеры</div>
+        <div class="why-desc" data-i18n="w4_desc">Опыт участия в государственных закупках. Полный пакет документов, счета-фактуры, акты выполненных работ.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="cl_label">Клиенты</span>
+    <h2 class="section-title" data-i18n="cl_title">Кто нам доверяет</h2>
+    <p class="section-desc" data-i18n="cl_desc">Мы работаем как с коммерческим бизнесом, так и с государственными организациями Узбекистана.</p>
+    <div class="clients-wrap">
+      <div class="client-block">
+        <div class="client-block-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v4M8 12v4M16 12v4"/></svg></div>
+        <div class="client-block-title" data-i18n="cl1_title">Бизнес-клиенты (B2B)</div>
+        <div class="client-block-desc" data-i18n="cl1_desc">Сотрудничаем с промышленными предприятиями, строительными компаниями и организациями нефтегазового сектора.</div>
+        <div class="client-list">
+          <div class="client-list-item" data-i18n="cl1i1">Промышленные предприятия</div>
+          <div class="client-list-item" data-i18n="cl1i2">Строительные организации</div>
+          <div class="client-list-item" data-i18n="cl1i3">Нефтегазовый сектор</div>
+          <div class="client-list-item" data-i18n="cl1i4">Энергетические компании</div>
+        </div>
+      </div>
+      <div class="client-block">
+        <div class="client-block-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2L2 9h20L12 2z"/></svg></div>
+        <div class="client-block-title" data-i18n="cl2_title">Государственные структуры</div>
+        <div class="client-block-desc" data-i18n="cl2_desc">Участвуем в государственных тендерах и закупках. Обеспечиваем полное соответствие требованиям госзакупок.</div>
+        <div class="client-list">
+          <div class="client-list-item" data-i18n="cl2i1">Государственные предприятия</div>
+          <div class="client-list-item" data-i18n="cl2i2">Муниципальные организации</div>
+          <div class="client-list-item" data-i18n="cl2i3">Участие в тендерах</div>
+          <div class="client-list-item" data-i18n="cl2i4">Электронные госзакупки</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="con_label">Контакты</span>
+    <h2 class="section-title" data-i18n="con_title">Свяжитесь с нами</h2>
+    <p class="section-desc" data-i18n="con_desc">Готовы ответить на ваши вопросы, рассчитать стоимость поставки или обсудить условия сотрудничества.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="contact-item-label" data-i18n="addr_label">Адрес</div>
+            <div class="contact-item-value" data-i18n="addr_val">Узбекистан, г. Ташкент,<br>ул. Бузбозор, проезд №7, д.21</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="contact-item-label" data-i18n="phone_label">Телефон</div>
+            <div class="contact-item-value"><a href="tel:+998974001414">+998 97 400 14 14</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Telegram / WhatsApp</div>
+            <div class="contact-item-value"><a href="https://t.me/+998974001414">+998 97 400 14 14</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <div class="contact-item-label" data-i18n="hours_label">Режим работы</div>
+            <div class="contact-item-value" data-i18n="hours_val">Пн–Пт: 9:00 – 18:00<br>Сб: 9:00 – 14:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title" data-i18n="form_title">Отправить запрос</div>
+        <div class="form-subtitle" data-i18n="form_sub">Опишите ваш запрос — ответим в течение рабочего дня</div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="f_name">Имя</label>
+              <input type="text" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="f_company">Компания</label>
+              <input type="text" placeholder="ООО Компания">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f_phone">Телефон</label>
+            <input type="tel" placeholder="+998 XX XXX XX XX" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f_subject">Тема запроса</label>
+            <select>
+              <option value="" data-i18n="f_sel0">Выберите категорию</option>
+              <option value="auto" data-i18n="f_sel1">Автозапчасти для спецтехники</option>
+              <option value="zra" data-i18n="f_sel2">ЗРА</option>
+              <option value="fittings" data-i18n="f_sel3">Фасонные детали</option>
+              <option value="pipes" data-i18n="f_sel4">Трубная продукция</option>
+              <option value="elec" data-i18n="f_sel5">Электрика</option>
+              <option value="kipia" data-i18n="f_sel6">КИПиА</option>
+              <option value="other" data-i18n="f_sel7">Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f_msg">Сообщение</label>
+            <textarea placeholder="Опишите ваш запрос, нужные позиции или количество..." data-i18n-placeholder="f_msg_ph"></textarea>
+          </div>
+          <button type="submit" class="btn-submit" data-i18n="f_submit">Отправить запрос →</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://yandex.uz/map-widget/v1/?ll=69.325488%2C41.316691&z=17&pt=69.325488%2C41.316691%2Cpm2rdm&l=map"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="MILLIY-BUSINESS на карте">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+        <svg height="40" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="MILLIY-BUSINESS логотип">
+          <text x="0" y="36" font-family="Georgia,serif" font-size="38" font-weight="700" fill="white" letter-spacing="-2">MB</text>
+          <text x="1" y="52" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.65)" letter-spacing="3">MILLIY-BUSINESS</text>
+        </svg>
+      </div>
+          <div class="logo-text">
+            <span class="logo-name">MILLIY-BUSINESS</span>
+            <span class="logo-sub" data-i18n="footer_sub">с 2019 года</span>
+          </div>
+        </a>
+        <p class="footer-desc" data-i18n="footer_desc">Профессиональные поставки промышленных товаров для бизнеса и государственных организаций Узбекистана.</p>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="fc_nav">Навигация</div>
+        <div class="footer-links">
+          <a href="#about" data-i18n="nav_about">О компании</a>
+          <a href="#products" data-i18n="nav_products">Товары</a>
+          <a href="#why" data-i18n="nav_why">Преимущества</a>
+          <a href="#clients" data-i18n="nav_clients">Клиенты</a>
+          <a href="#contact" data-i18n="nav_contact">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="fc_prod">Продукция</div>
+        <div class="footer-links">
+          <a href="#products" data-i18n="p1_title_s">Автозапчасти</a>
+          <a href="#products" data-i18n="p2_title_s">ЗРА</a>
+          <a href="#products" data-i18n="p3_title_s">Фасонные детали</a>
+          <a href="#products" data-i18n="p4_title_s">Трубная продукция</a>
+          <a href="#products" data-i18n="p5_title_s">Электрика</a>
+          <a href="#products" data-i18n="p6_title_s">КИПиА</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="fc_contact">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+998974001414">+998 97 400 14 14</a>
+          <a href="https://t.me/+998974001414">Telegram</a>
+          <a href="#contact" data-i18n="fc_map">Показать на карте</a>
+          <a href="#" style="color:rgba(255,255,255,0.4); font-size:12px;" data-i18n="fc_city">Ташкент, Узбекистан</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2024 MILLIY-BUSINESS. Все права защищены.</span>
+      <div class="footer-socials">
+        <a href="https://t.me/+998974001414" class="social-btn" title="Telegram" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></a>
+        <a href="https://wa.me/998974001414" class="social-btn" title="WhatsApp" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" data-i18n="toast_msg">✅ Запрос отправлен! Мы свяжемся с вами.</div>
+
+<script>
+const i18n = {
+  ru: {
+    logo_sub: 'Промышленные поставки',
+    nav_about: 'О компании',
+    nav_products: 'Товары',
+    nav_why: 'Преимущества',
+    nav_clients: 'Клиенты',
+    nav_contact: 'Связаться',
+    hero_badge: 'Надёжный поставщик с 2019 года',
+    hero_title: 'Промышленные поставки<br><span>для вашего бизнеса</span>',
+    hero_desc: 'Автозапчасти для спецтехники, ЗРА, трубная продукция, электрика и КИПиА. Работаем с B2B-клиентами и государственными структурами по всему Узбекистану.',
+    hero_btn1: '🗂 Каталог товаров',
+    hero_btn2: 'Запросить цену',
+    stat1: 'лет на рынке',
+    stat2: 'категорий товаров',
+    stat3: '& Гостендеры',
+    hc1: 'Автозапчасти для спецтехники',
+    hc2: 'ЗРА',
+    hc3: 'Фасонные детали',
+    hc4: 'Электрика',
+    hc5: 'Трубная продукция',
+    hc6: 'КИПиА',
+    about_label: 'О компании',
+    about_title: 'MILLIY-BUSINESS — ваш надёжный партнёр',
+    about_desc: 'Основана в 2019 году в Ташкенте. Специализируемся на поставках промышленных товаров для предприятий, строительных организаций и государственных структур Узбекистана.',
+    about_p1: 'Компания <strong>MILLIY-BUSINESS</strong> — профессиональный поставщик широкого ассортимента промышленных и технических товаров. Мы работаем напрямую с производителями и официальными дистрибьюторами.',
+    about_p2: 'Наши клиенты — промышленные предприятия, строительные компании, нефтегазовый сектор и государственные организации. Мы успешно участвуем в тендерах и государственных закупках.',
+    feat1_title: 'Прямые поставки',
+    feat1_desc: 'От производителей и дистрибьюторов',
+    feat2_title: 'Документооборот',
+    feat2_desc: 'Полный пакет документов',
+    feat3_title: 'Оперативность',
+    feat3_desc: 'Быстрое выполнение заявок',
+    feat4_title: 'Тендеры',
+    feat4_desc: 'Участие в госзакупках',
+    m1: 'Год основания',
+    m2: 'Лет опыта',
+    m3: 'Узбекистан — головной офис',
+    prod_label: 'Товары и услуги',
+    prod_title: 'Что мы поставляем',
+    prod_desc: 'Широкий ассортимент промышленных товаров для любых задач.',
+    p1_title: 'Автозапчасти для спецтехники',
+    p1_desc: 'Запасные части и комплектующие для экскаваторов, бульдозеров, грузовой и строительной спецтехники.',
+    p1t1:'Экскаваторы',p1t2:'Бульдозеры',p1t3:'Грузовая техника',
+    p2_title: 'ЗРА — Запорно-регулирующая арматура',
+    p2_desc: 'Задвижки, краны, клапаны, заслонки для промышленных трубопроводов.',
+    p2t1:'Задвижки',p2t2:'Клапаны',p2t3:'Краны',
+    p3_title: 'Фасонные детали',
+    p3_desc: 'Отводы, тройники, переходы, фланцы. Широкий диапазон диаметров.',
+    p3t1:'Отводы',p3t2:'Тройники',p3t3:'Переходы',p3t4:'Фланцы',
+    p4_title: 'Трубная продукция',
+    p4_desc: 'Стальные, нержавеющие, полиэтиленовые трубы для строительства и промышленности.',
+    p4t1:'Стальные трубы',p4t2:'Нержавейка',p4t3:'Полиэтилен',
+    p5_title: 'Электрика',
+    p5_desc: 'Кабельно-проводниковая продукция, щитовое оборудование, автоматические выключатели.',
+    p5t1:'Кабель',p5t2:'Автоматы',p5t3:'Щитовое оборудование',
+    p6_title: 'КИПиА',
+    p6_desc: 'Датчики давления, температуры, расходомеры, манометры и системы управления.',
+    p6t1:'Датчики',p6t2:'Манометры',p6t3:'Расходомеры',
+    why_label:'Почему мы', why_title:'Наши преимущества',
+    why_desc:'Мы строим долгосрочные партнёрские отношения, основанные на качестве, надёжности и профессионализме.',
+    w1_title:'Качество',w1_desc:'Работаем только с проверенными производителями. Вся продукция сопровождается документацией.',
+    w2_title:'Сроки',w2_desc:'Соблюдаем договорённые сроки поставки. Оперативная логистика по Узбекистану.',
+    w3_title:'Цены',w3_desc:'Конкурентоспособные цены за счёт прямой работы с поставщиками.',
+    w4_title:'Тендеры',w4_desc:'Опыт участия в государственных закупках. Полный пакет документов.',
+    cl_label:'Клиенты', cl_title:'Кто нам доверяет',
+    cl_desc:'Мы работаем как с коммерческим бизнесом, так и с государственными организациями.',
+    cl1_title:'Бизнес-клиенты (B2B)',cl1_desc:'Промышленные предприятия, строительные компании и нефтегазовый сектор.',
+    cl1i1:'Промышленные предприятия',cl1i2:'Строительные организации',cl1i3:'Нефтегазовый сектор',cl1i4:'Энергетические компании',
+    cl2_title:'Государственные структуры',cl2_desc:'Участвуем в государственных тендерах и закупках с полным пакетом документов.',
+    cl2i1:'Государственные предприятия',cl2i2:'Муниципальные организации',cl2i3:'Участие в тендерах',cl2i4:'Электронные госзакупки',
+    con_label:'Контакты', con_title:'Свяжитесь с нами',
+    con_desc:'Готовы ответить на вопросы и обсудить условия сотрудничества.',
+    addr_label:'Адрес', addr_val:'Узбекистан, г. Ташкент,<br>ул. Бузбозор, проезд №7, д.21',
+    phone_label:'Телефон',
+    hours_label:'Режим работы', hours_val:'Пн–Пт: 9:00 – 18:00<br>Сб: 9:00 – 14:00',
+    form_title:'Отправить запрос',
+    form_sub:'Опишите ваш запрос — ответим в течение рабочего дня',
+    f_name:'Имя',f_company:'Компания',f_phone:'Телефон',f_subject:'Тема запроса',f_msg:'Сообщение',
+    f_sel0:'Выберите категорию',f_sel1:'Автозапчасти',f_sel2:'ЗРА',f_sel3:'Фасонные детали',
+    f_sel4:'Трубная продукция',f_sel5:'Электрика',f_sel6:'КИПиА',f_sel7:'Другое',
+    f_submit:'Отправить запрос →',
+    footer_sub:'с 2019 года',
+    footer_desc:'Профессиональные поставки промышленных товаров для бизнеса и государственных организаций Узбекистана.',
+    fc_nav:'Навигация',fc_prod:'Продукция',fc_contact:'Контакты',fc_map:'Показать на карте',fc_city:'Ташкент, Узбекистан',
+    p1_title_s:'Автозапчасти',p2_title_s:'ЗРА',p3_title_s:'Фасонные детали',p4_title_s:'Трубная продукция',p5_title_s:'Электрика',p6_title_s:'КИПиА',
+    footer_copy:'© 2024 MILLIY-BUSINESS. Все права защищены.',
+    toast_msg:'✅ Запрос отправлен! Мы свяжемся с вами.'
+  },
+  uz: {
+    logo_sub: 'Sanoat ta\'minoti',
+    nav_about: 'Kompaniya haqida',
+    nav_products: 'Mahsulotlar',
+    nav_why: 'Afzalliklar',
+    nav_clients: 'Mijozlar',
+    nav_contact: 'Bog\'lanish',
+    hero_badge: '2019 yildan ishonchli yetkazib beruvchi',
+    hero_title: 'Biznesingiz uchun<br><span>sanoat ta\'minoti</span>',
+    hero_desc: 'Maxsus texnika ehtiyot qismlari, ZRA, quvur mahsulotlari, elektr va KIPiA. B2B mijozlar va davlat tuzilmalari bilan ishlaymiz.',
+    hero_btn1: '🗂 Mahsulotlar katalogi',
+    hero_btn2: 'Narx so\'rash',
+    stat1: 'yillik tajriba',
+    stat2: 'mahsulot toifalari',
+    stat3: 'va davlat tenderlar',
+    hc1:'Maxsus texnika ehtiyot qismlari',hc2:'ZRA',hc3:'Qo\'shimcha detallar',hc4:'Elektrika',hc5:'Quvur mahsulotlari',hc6:'KIPiA',
+    about_label:'Kompaniya haqida', about_title:'MILLIY-BUSINESS — ishonchli sherigingiz',
+    about_desc:'2019 yilda Toshkentda tashkil etilgan. O\'zbekiston bo\'ylab sanoat mahsulotlarini yetkazib berishga ixtisoslashgan.',
+    about_p1:'<strong>MILLIY-BUSINESS</strong> — sanoat va texnik mahsulotlarning keng assortimentini yetkazib beruvchi professional kompaniya.',
+    about_p2:'Mijozlarimiz — sanoat korxonalari, qurilish kompaniyalari, neft-gaz sektori va davlat tashkilotlari.',
+    feat1_title:'To\'g\'ridan-to\'g\'ri yetkazib berish',feat1_desc:'Ishlab chiqaruvchilardan',
+    feat2_title:'Hujjatlar',feat2_desc:'To\'liq hujjatlar to\'plami',
+    feat3_title:'Tezkorlik',feat3_desc:'Arizalarni tez bajarish',
+    feat4_title:'Tenderlar',feat4_desc:'Davlat xaridlarida ishtirok',
+    m1:'Tashkil etilgan yili',m2:'Yillik tajriba',m3:'O\'zbekiston — bosh ofis',
+    prod_label:'Mahsulotlar va xizmatlar', prod_title:'Nima yetkazib beramiz',
+    prod_desc:'Har qanday vazifa uchun keng assortimentdagi sanoat mahsulotlari.',
+    p1_title:'Maxsus texnika ehtiyot qismlari',p1_desc:'Ekskavator, buldozer va qurilish texnikasi uchun ehtiyot qismlar.',
+    p1t1:'Ekskavatorlar',p1t2:'Buldozerlar',p1t3:'Yuk texnikasi',
+    p2_title:'ZRA — To\'siq-tartiblovchi armatura',p2_desc:'Sanoat quvurlari uchun klapanlar, kranlar va armatura.',
+    p2t1:'Zatvorkalar',p2t2:'Klapanlar',p2t3:'Kranlar',
+    p3_title:'Qo\'shimcha detallar',p3_desc:'Tirsak, uch yo\'lakli, o\'tkazgichlar va flanetslar.',
+    p3t1:'Tirsak',p3t2:'Uch yo\'lakli',p3t3:'O\'tkazgich',p3t4:'Flanets',
+    p4_title:'Quvur mahsulotlari',p4_desc:'Po\'lat, zanglamaydigan po\'lat, polietilen quvurlar.',
+    p4t1:'Po\'lat quvurlar',p4t2:'Zanglamaydigan',p4t3:'Polietilen',
+    p5_title:'Elektrika',p5_desc:'Kabel mahsulotlari, щit uskunalari, avtomatik uzgichlar.',
+    p5t1:'Kabel',p5t2:'Avtomatlar',p5t3:'Щit uskunalar',
+    p6_title:'KIPiA',p6_desc:'Bosim, harorat sensorlari, debimetlar va boshqaruv tizimlari.',
+    p6t1:'Sensorlar',p6t2:'Manometrlar',p6t3:'Debimetlar',
+    why_label:'Nega biz', why_title:'Bizning afzalliklarimiz',
+    why_desc:'Sifat, ishonchlilik va professionallikka asoslangan uzoq muddatli hamkorlik.',
+    w1_title:'Sifat',w1_desc:'Faqat tasdiqlangan ishlab chiqaruvchilar bilan ishlaymiz.',
+    w2_title:'Muddatlar',w2_desc:'Kelishilgan yetkazib berish muddatlariga rioya qilamiz.',
+    w3_title:'Narxlar',w3_desc:'Ta\'minotchilar bilan bevosita ishlash orqali raqobatbardosh narxlar.',
+    w4_title:'Tenderlar',w4_desc:'Davlat xaridlarida ishtirok tajribasi. To\'liq hujjatlar.',
+    cl_label:'Mijozlar', cl_title:'Bizga kim ishonadi',
+    cl_desc:'Ham tijorat biznes, ham davlat tashkilotlari bilan ishlaymiz.',
+    cl1_title:'Biznes mijozlar (B2B)',cl1_desc:'Sanoat korxonalari, qurilish kompaniyalari va neft-gaz sektori.',
+    cl1i1:'Sanoat korxonalari',cl1i2:'Qurilish tashkilotlari',cl1i3:'Neft-gaz sektori',cl1i4:'Energetika kompaniyalari',
+    cl2_title:'Davlat tuzilmalari',cl2_desc:'Davlat tenderlarida ishtirok etamiz. To\'liq hujjatlar to\'plami.',
+    cl2i1:'Davlat korxonalari',cl2i2:'Munitsipal tashkilotlar',cl2i3:'Tender ishtiroki',cl2i4:'Elektron davlat xaridlari',
+    con_label:'Aloqa', con_title:'Biz bilan bog\'laning',
+    con_desc:'Savollarga javob berishga, narx hisoblashga tayyormiz.',
+    addr_label:'Manzil', addr_val:'O\'zbekiston, Toshkent sh.,<br>Buzbozor ko\'chasi, o\'tkazma №7, uy 21',
+    phone_label:'Telefon',
+    hours_label:'Ish tartibi', hours_val:'Du–Ju: 9:00 – 18:00<br>Sha: 9:00 – 14:00',
+    form_title:'So\'rov yuborish',
+    form_sub:'So\'rovingizni yozing — bir ish kuni ichida javob beramiz',
+    f_name:'Ism',f_company:'Kompaniya',f_phone:'Telefon',f_subject:'Mavzu',f_msg:'Xabar',
+    f_sel0:'Toifa tanlang',f_sel1:'Ehtiyot qismlar',f_sel2:'ZRA',f_sel3:'Qo\'shimcha detallar',
+    f_sel4:'Quvur mahsulotlari',f_sel5:'Elektrika',f_sel6:'KIPiA',f_sel7:'Boshqa',
+    f_submit:'So\'rov yuborish →',
+    footer_sub:'2019 yildan beri',
+    footer_desc:'O\'zbekiston biznes va davlat tashkilotlari uchun professional sanoat mahsulotlari ta\'minoti.',
+    fc_nav:'Navigatsiya',fc_prod:'Mahsulotlar',fc_contact:'Aloqa',fc_map:'Xaritada ko\'rish',fc_city:'Toshkent, O\'zbekiston',
+    p1_title_s:'Ehtiyot qismlar',p2_title_s:'ZRA',p3_title_s:'Qo\'shimcha detallar',p4_title_s:'Quvurlar',p5_title_s:'Elektrika',p6_title_s:'KIPiA',
+    footer_copy:'© 2024 MILLIY-BUSINESS. Barcha huquqlar himoyalangan.',
+    toast_msg:'✅ So\'rov yuborildi! Siz bilan bog\'lanamiz.'
+  },
+  en: {
+    logo_sub: 'Industrial Supply',
+    nav_about: 'About',
+    nav_products: 'Products',
+    nav_why: 'Why Us',
+    nav_clients: 'Clients',
+    nav_contact: 'Contact',
+    hero_badge: 'Reliable supplier since 2019',
+    hero_title: 'Industrial supply<br><span>for your business</span>',
+    hero_desc: 'Spare parts for heavy equipment, flow control valves, pipe fittings, electrical and instrumentation supplies. Serving B2B clients and government organizations across Uzbekistan.',
+    hero_btn1: '🗂 Product Catalog',
+    hero_btn2: 'Request a Quote',
+    stat1: 'years in market',
+    stat2: 'product categories',
+    stat3: '& Gov. Tenders',
+    hc1:'Heavy Equipment Parts',hc2:'Control Valves',hc3:'Pipe Fittings',hc4:'Electrical',hc5:'Pipe Products',hc6:'Instrumentation',
+    about_label:'About', about_title:'MILLIY-BUSINESS — your reliable partner',
+    about_desc:'Founded in 2019 in Tashkent. Specializing in industrial goods supply for enterprises, construction companies and government organizations across Uzbekistan.',
+    about_p1:'<strong>MILLIY-BUSINESS</strong> is a professional supplier of a wide range of industrial and technical products, working directly with manufacturers and official distributors.',
+    about_p2:'Our clients include industrial enterprises, construction companies, the oil & gas sector and government organizations. We successfully participate in public procurement.',
+    feat1_title:'Direct Supply',feat1_desc:'From manufacturers & distributors',
+    feat2_title:'Documentation',feat2_desc:'Full package of documents',
+    feat3_title:'Fast Execution',feat3_desc:'Quick order processing',
+    feat4_title:'Tenders',feat4_desc:'Government procurement',
+    m1:'Founded',m2:'Years of experience',m3:'Uzbekistan — headquarters',
+    prod_label:'Products & Services', prod_title:'What we supply',
+    prod_desc:'A wide range of industrial products for any task.',
+    p1_title:'Heavy Equipment Parts',p1_desc:'Spare parts for excavators, bulldozers and construction machinery.',
+    p1t1:'Excavators',p1t2:'Bulldozers',p1t3:'Heavy trucks',
+    p2_title:'Flow Control Valves (ZRA)',p2_desc:'Gate valves, ball valves, control valves for industrial pipelines.',
+    p2t1:'Gate valves',p2t2:'Control valves',p2t3:'Ball valves',
+    p3_title:'Pipe Fittings',p3_desc:'Elbows, tees, reducers, flanges. Wide range of diameters.',
+    p3t1:'Elbows',p3t2:'Tees',p3t3:'Reducers',p3t4:'Flanges',
+    p4_title:'Pipe Products',p4_desc:'Steel, stainless, polyethylene pipes for construction and industry.',
+    p4t1:'Steel pipes',p4t2:'Stainless steel',p4t3:'Polyethylene',
+    p5_title:'Electrical',p5_desc:'Cable products, switchgear, circuit breakers and industrial electrical.',
+    p5t1:'Cable',p5t2:'Circuit breakers',p5t3:'Switchgear',
+    p6_title:'Instrumentation (KIPiA)',p6_desc:'Pressure, temperature sensors, flow meters, gauges and control systems.',
+    p6t1:'Sensors',p6t2:'Gauges',p6t3:'Flow meters',
+    why_label:'Why us', why_title:'Our advantages',
+    why_desc:'We build long-term partnerships based on quality, reliability and professionalism.',
+    w1_title:'Quality',w1_desc:'We work only with verified manufacturers. All products come with full documentation.',
+    w2_title:'Timelines',w2_desc:'We meet agreed delivery deadlines with efficient logistics across Uzbekistan.',
+    w3_title:'Pricing',w3_desc:'Competitive prices through direct work with manufacturers.',
+    w4_title:'Tenders',w4_desc:'Experience in government procurement. Full documentation package.',
+    cl_label:'Clients', cl_title:'Who trusts us',
+    cl_desc:'We work with both commercial businesses and government organizations.',
+    cl1_title:'Business Clients (B2B)',cl1_desc:'Industrial enterprises, construction companies and oil & gas sector.',
+    cl1i1:'Industrial enterprises',cl1i2:'Construction companies',cl1i3:'Oil & gas sector',cl1i4:'Energy companies',
+    cl2_title:'Government Organizations',cl2_desc:'We participate in government tenders with a full documentation package.',
+    cl2i1:'State enterprises',cl2i2:'Municipal organizations',cl2i3:'Tender participation',cl2i4:'E-government procurement',
+    con_label:'Contact', con_title:'Get in touch',
+    con_desc:'We are ready to answer your questions and discuss partnership terms.',
+    addr_label:'Address', addr_val:'Uzbekistan, Tashkent city,<br>Buzbozor st., passage 7, house 21',
+    phone_label:'Phone',
+    hours_label:'Working hours', hours_val:'Mon–Fri: 9:00 – 18:00<br>Sat: 9:00 – 14:00',
+    form_title:'Send a Request',
+    form_sub:'Describe your request — we will reply within one business day',
+    f_name:'Name',f_company:'Company',f_phone:'Phone',f_subject:'Subject',f_msg:'Message',
+    f_sel0:'Select category',f_sel1:'Equipment parts',f_sel2:'Control valves',f_sel3:'Pipe fittings',
+    f_sel4:'Pipe products',f_sel5:'Electrical',f_sel6:'Instrumentation',f_sel7:'Other',
+    f_submit:'Send Request →',
+    footer_sub:'since 2019',
+    footer_desc:'Professional industrial supply for businesses and government organizations in Uzbekistan.',
+    fc_nav:'Navigation',fc_prod:'Products',fc_contact:'Contacts',fc_map:'View on map',fc_city:'Tashkent, Uzbekistan',
+    p1_title_s:'Equipment Parts',p2_title_s:'Control Valves',p3_title_s:'Pipe Fittings',p4_title_s:'Pipes',p5_title_s:'Electrical',p6_title_s:'Instrumentation',
+    footer_copy:'© 2024 MILLIY-BUSINESS. All rights reserved.',
+    toast_msg:'✅ Request sent! We will contact you soon.'
+  }
+};
+
+let currentLang = 'ru';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => { if(b.textContent === lang.toUpperCase()) b.classList.add('active'); });
+  applyTranslations();
+}
+
+function applyTranslations() {
+  const t = i18n[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.documentElement.lang = currentLang === 'uz' ? 'uz' : currentLang === 'en' ? 'en' : 'ru';
+}
+
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const toast = document.getElementById('toast');
+  toast.textContent = i18n[currentLang].toast_msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+  e.target.reset();
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+applyTranslations();
+
+/* ── ANIMATED COUNTERS ── */
+function animateCounter(el, target, suffix, duration) {
+  const start = performance.now();
+  const isText = isNaN(target);
+  if (isText) { el.textContent = target; return; }
+  const update = (now) => {
+    const elapsed = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - elapsed, 3);
+    el.textContent = Math.round(ease * target) + (suffix || '');
+    if (elapsed < 1) requestAnimationFrame(update);
+    else { el.textContent = target + (suffix || ''); el.classList.add('counted'); }
+  };
+  requestAnimationFrame(update);
+}
+
+const statDefs = [
+  { selector: '.hero-stats .stat-item:nth-child(1) .stat-num', target: 5, suffix: '+' },
+  { selector: '.hero-stats .stat-item:nth-child(2) .stat-num', target: 6, suffix: '' },
+  { selector: '.hero-stats .stat-item:nth-child(3) .stat-num', target: 'B2B', suffix: '' },
+];
+
+let countersRun = false;
+const heroEl = document.querySelector('.hero');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !countersRun) {
+      countersRun = true;
+      setTimeout(() => {
+        statDefs.forEach(def => {
+          const el = document.querySelector(def.selector);
+          if (el) animateCounter(el, def.target, def.suffix, 1400);
+        });
+      }, 900);
+    }
+  });
+}, { threshold: 0.3 });
+if (heroEl) observer.observe(heroEl);
+
+/* ── SCROLL REVEAL ── */
+const revealEls = document.querySelectorAll(
+  '.product-card, .why-card, .client-block, .metric-card, .contact-item, .about-features .feature-item'
+);
+const revealStyle = `
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+`;
+revealEls.forEach((el, i) => {
+  el.style.cssText += revealStyle;
+  el.style.transitionDelay = (i % 4) * 80 + 'ms';
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
