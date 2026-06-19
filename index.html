@@ -1257,24 +1257,26 @@
       <div class="contact-form">
         <div class="form-title" data-i18n="form_title">Отправить запрос</div>
         <div class="form-subtitle" data-i18n="form_sub">Опишите ваш запрос — ответим в течение рабочего дня</div>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/xdkodnjp" method="POST">
+          <input type="hidden" name="_subject" value="Новый запрос с сайта MILLIY-BUSINESS">
+          <input type="hidden" name="_replyto" value="rustam@milliy-business.uz">
           <div class="form-row">
             <div class="form-group">
               <label data-i18n="f_name">Имя</label>
-              <input type="text" placeholder="Иван Иванов" required>
+              <input type="text" name="name" placeholder="Иван Иванов" required>
             </div>
             <div class="form-group">
               <label data-i18n="f_company">Компания</label>
-              <input type="text" placeholder="ООО Компания">
+              <input type="text" name="company" placeholder="ООО Компания">
             </div>
           </div>
           <div class="form-group">
             <label data-i18n="f_phone">Телефон</label>
-            <input type="tel" placeholder="+998 XX XXX XX XX" required>
+            <input type="tel" name="phone" placeholder="+998 XX XXX XX XX" required>
           </div>
           <div class="form-group">
             <label data-i18n="f_subject">Тема запроса</label>
-            <select>
+            <select name="category">
               <option value="" data-i18n="f_sel0">Выберите категорию</option>
               <option value="auto" data-i18n="f_sel1">Автозапчасти для спецтехники</option>
               <option value="zra" data-i18n="f_sel2">ЗРА</option>
@@ -1287,7 +1289,7 @@
           </div>
           <div class="form-group">
             <label data-i18n="f_msg">Сообщение</label>
-            <textarea placeholder="Опишите ваш запрос, нужные позиции или количество..." data-i18n-placeholder="f_msg_ph"></textarea>
+            <textarea name="message" placeholder="Опишите ваш запрос, нужные позиции или количество..." data-i18n-placeholder="f_msg_ph"></textarea>
           </div>
           <button type="submit" class="btn-submit" data-i18n="f_submit">Отправить запрос →</button>
         </form>
