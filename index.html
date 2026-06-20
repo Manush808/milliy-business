@@ -637,6 +637,49 @@
   }
   .btn-submit:hover { background: var(--blue-light); transform: translateY(-1px); }
 
+  /* ── WORLD DELIVERY & MESSENGERS ── */
+  .world-delivery-block {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+    border: 1.5px solid #d0daff;
+    border-radius: 16px;
+    padding: 32px 28px 24px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .wd-icon { margin-bottom: 16px; }
+  .wd-title { font-size: 20px; font-weight: 700; color: var(--blue-dark); margin-bottom: 12px; }
+  .wd-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 20px; }
+  .wd-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .wd-tag {
+    background: white;
+    border: 1.5px solid #c5d0f5;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .messenger-block { display: flex; flex-direction: column; gap: 12px; }
+  .messenger-label { font-size: 13px; font-weight: 600; color: var(--gray-600); margin-bottom: 4px; text-align: center; }
+  .messenger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .tg-btn { background: #229ED9; color: white; }
+  .tg-btn:hover { background: #1a8bbf; transform: translateY(-1px); }
+  .wa-btn { background: #25D366; color: white; }
+  .wa-btn:hover { background: #1db954; transform: translateY(-1px); }
+  .call-btn { background: var(--blue); color: white; }
+  .call-btn:hover { background: var(--blue-light); transform: translateY(-1px); }
+
   /* ── MAP ── */
   .map-wrap {
     margin-top: 64px;
@@ -893,7 +936,7 @@
       <p class="hero-desc anim-desc" data-i18n="hero_desc">Автозапчасти для спецтехники, ЗРА, трубная продукция, электрика и КИПиА. Работаем с B2B-клиентами и государственными структурами по всему Узбекистану.</p>
       <div class="hero-actions anim-actions">
         <a href="#products" class="btn-primary" data-i18n="hero_btn1">🗂 Каталог товаров</a>
-        <a href="#contact" class="btn-outline" data-i18n="hero_btn2">Запросить цену</a>
+        <a href="https://t.me/+998974001414" target="_blank" class="btn-outline" data-i18n="hero_btn2">Запросить цену</a>
       </div>
       <div class="hero-stats anim-stats">
         <div class="stat-item">
@@ -1255,44 +1298,36 @@
       </div>
 
       <div class="contact-form">
-        <div class="form-title" data-i18n="form_title">Отправить запрос</div>
-        <div class="form-subtitle" data-i18n="form_sub">Опишите ваш запрос — ответим в течение рабочего дня</div>
-        <form id="contactForm" action="https://formspree.io/f/xdkodnjp" method="POST">
-          <input type="hidden" name="_subject" value="Новый запрос с сайта MILLIY-BUSINESS">
-          <input type="hidden" name="_replyto" value="rustam@milliy-business.uz">
-          <div class="form-row">
-            <div class="form-group">
-              <label data-i18n="f_name">Имя</label>
-              <input type="text" name="name" placeholder="Иван Иванов" required>
-            </div>
-            <div class="form-group">
-              <label data-i18n="f_company">Компания</label>
-              <input type="text" name="company" placeholder="ООО Компания">
-            </div>
+        <div class="world-delivery-block">
+          <div class="wd-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1B3FA0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <div class="form-group">
-            <label data-i18n="f_phone">Телефон</label>
-            <input type="tel" name="phone" placeholder="+998 XX XXX XX XX" required>
+          <h3 class="wd-title" data-i18n="wd_title">Доставка из любой точки мира</h3>
+          <p class="wd-desc" data-i18n="wd_desc">Помимо основных направлений, мы поставляем товары под заказ из любой страны мира — Китай, Европа, Россия, Турция и другие. Работаем в сжатые сроки и контролируем каждый этап логистики.</p>
+          <div class="wd-tags">
+            <span class="wd-tag" data-i18n="wd_tag1">Китай</span>
+            <span class="wd-tag" data-i18n="wd_tag2">Европа</span>
+            <span class="wd-tag" data-i18n="wd_tag3">Россия</span>
+            <span class="wd-tag" data-i18n="wd_tag4">Турция</span>
+            <span class="wd-tag" data-i18n="wd_tag5">Корея</span>
+            <span class="wd-tag" data-i18n="wd_tag6">и другие</span>
           </div>
-          <div class="form-group">
-            <label data-i18n="f_subject">Тема запроса</label>
-            <select name="category">
-              <option value="" data-i18n="f_sel0">Выберите категорию</option>
-              <option value="auto" data-i18n="f_sel1">Автозапчасти для спецтехники</option>
-              <option value="zra" data-i18n="f_sel2">ЗРА</option>
-              <option value="fittings" data-i18n="f_sel3">Фасонные детали</option>
-              <option value="pipes" data-i18n="f_sel4">Трубная продукция</option>
-              <option value="elec" data-i18n="f_sel5">Электрика</option>
-              <option value="kipia" data-i18n="f_sel6">КИПиА</option>
-              <option value="other" data-i18n="f_sel7">Другое</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label data-i18n="f_msg">Сообщение</label>
-            <textarea name="message" placeholder="Опишите ваш запрос, нужные позиции или количество..." data-i18n-placeholder="f_msg_ph"></textarea>
-          </div>
-          <button type="submit" class="btn-submit" data-i18n="f_submit">Отправить запрос →</button>
-        </form>
+        </div>
+        <div class="messenger-block">
+          <p class="messenger-label" data-i18n="msg_label">Напишите нам прямо сейчас:</p>
+          <a href="https://t.me/+998974001414" target="_blank" class="messenger-btn tg-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.29 13.67l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.858.889z"/></svg>
+            Telegram
+          </a>
+          <a href="https://wa.me/998974001414" target="_blank" class="messenger-btn wa-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+998974001414" class="messenger-btn call-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Позвонить
+          </a>
+        </div>
       </div>
     </div>
 
@@ -1456,7 +1491,11 @@ const i18n = {
     fc_nav:'Навигация',fc_prod:'Продукция',fc_contact:'Контакты',fc_map:'Показать на карте',fc_city:'Ташкент, Узбекистан',
     p1_title_s:'Автозапчасти',p2_title_s:'ЗРА',p3_title_s:'Фасонные детали',p4_title_s:'Трубная продукция',p5_title_s:'Электрика',p6_title_s:'КИПиА',
     footer_copy:'© 2019–2026 MILLIY-BUSINESS. Все права защищены.',
-    toast_msg:'✅ Запрос отправлен! Мы свяжемся с вами.'
+    toast_msg:'✅ Запрос отправлен! Мы свяжемся с вами.',
+    wd_title:'Доставка из любой точки мира',
+    wd_desc:'Помимо основных направлений, мы поставляем товары под заказ из любой страны мира — Китай, Европа, Россия, Турция и другие. Работаем в сжатые сроки и контролируем каждый этап логистики.',
+    wd_tag1:'Китай',wd_tag2:'Европа',wd_tag3:'Россия',wd_tag4:'Турция',wd_tag5:'Корея',wd_tag6:'и другие',
+    msg_label:'Напишите нам прямо сейчас:'
   },
   uz: {
     logo_sub: 'Sanoat ta\'minoti',
@@ -1525,7 +1564,11 @@ const i18n = {
     fc_nav:'Navigatsiya',fc_prod:'Mahsulotlar',fc_contact:'Aloqa',fc_map:'Xaritada ko\'rish',fc_city:'Toshkent, O\'zbekiston',
     p1_title_s:'Ehtiyot qismlar',p2_title_s:'ZRA',p3_title_s:'Qo\'shimcha detallar',p4_title_s:'Quvurlar',p5_title_s:'Elektrika',p6_title_s:'KIPiA',
     footer_copy:'© 2019–2026 MILLIY-BUSINESS. Barcha huquqlar himoyalangan.',
-    toast_msg:'✅ So\'rov yuborildi! Siz bilan bog\'lanamiz.'
+    toast_msg:'✅ So\'rov yuborildi! Siz bilan bog\'lanamiz.',
+    wd_title:'Dunyoning istalgan nuqtasidan yetkazib berish',
+    wd_desc:'Asosiy yo\'nalishlardan tashqari, biz buyurtma asosida dunyoning istalgan mamlakatidan tovar yetkazib beramiz — Xitoy, Yevropa, Rossiya, Turkiya va boshqalar. Qisqa muddatlarda ishlaymiz va logistikaning har bir bosqichini nazorat qilamiz.',
+    wd_tag1:'Xitoy',wd_tag2:'Yevropa',wd_tag3:'Rossiya',wd_tag4:'Turkiya',wd_tag5:'Koreya',wd_tag6:'va boshqalar',
+    msg_label:'Bizga hoziroq yozing:'
   },
   en: {
     logo_sub: 'Industrial Supply',
@@ -1594,7 +1637,11 @@ const i18n = {
     fc_nav:'Navigation',fc_prod:'Products',fc_contact:'Contacts',fc_map:'View on map',fc_city:'Tashkent, Uzbekistan',
     p1_title_s:'Equipment Parts',p2_title_s:'Control Valves',p3_title_s:'Pipe Fittings',p4_title_s:'Pipes',p5_title_s:'Electrical',p6_title_s:'Instrumentation',
     footer_copy:'© 2019–2026 MILLIY-BUSINESS. All rights reserved.',
-    toast_msg:'✅ Request sent! We will contact you soon.'
+    toast_msg:'✅ Request sent! We will contact you soon.',
+    wd_title:'Delivery from Anywhere in the World',
+    wd_desc:'In addition to our main product lines, we source and deliver goods to order from any country — China, Europe, Russia, Turkey, Korea and beyond. We work within tight deadlines and oversee every step of the logistics chain.',
+    wd_tag1:'China',wd_tag2:'Europe',wd_tag3:'Russia',wd_tag4:'Turkey',wd_tag5:'Korea',wd_tag6:'and more',
+    msg_label:'Contact us right now:'
   }
 };
 
